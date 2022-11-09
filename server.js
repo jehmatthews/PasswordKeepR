@@ -52,6 +52,17 @@ app.get('/login', (req, res) => {
   res.render('login');
 })
 
+app.get('/passwords', (req, res) => {
+  res.render('passwords')
+})
+
+app.get('/passwords/create', (req, res) => {
+  res.render('create-password')
+})
+app.post('/login', (req, res) => {
+  res.redirect('/passwords')
+})
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
