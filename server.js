@@ -5,6 +5,11 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const generateRandomStringStandard = require('./public/scripts/password-generator-standard');
+const generateRandomStringSpecial = require('./public/scripts/password-generator-special');
+const generateRandomStringUpper = require('./public/scripts/password-generator-upper');
+const generateRandomStringAll = require('./public/scripts/password-generator-all');
+
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -50,31 +55,46 @@ app.get('/', (req, res) => {
 
 app.get('/login', (req, res) => {
   res.render('login');
-})
+});
 
 app.get('/passwords', (req, res) => {
   res.render('passwords')
-})
+});
 
 app.get('/passwords/new', (req, res) => {
   res.render('create-password')
-})
+});
+
+app.post('/passwords', (req, res) => {
+  res.redirect('/passwords')
+});
 
 app.post('/login', (req, res) => {
   res.redirect('/passwords')
-})
+});
 
 app.post('/passwords/new', (req, res) => {
   res.redirect('/passwords/new')
-})
+});
 
 app.post('/logout', (req, res) => {
   res.redirect('/login')
-})
+});
 
 app.post('/password/create', (req, res) => {
+  console.log(req.body.url);
+  console.log(req.body.username);
+  if (req.body.specialChar === 'true') {
+    console.log(generateRandomStringSpecial(req.body.passwordLength))
+  } if (req.body.upperCase === 'true') {
+    console.log(generateRandomStringUpper(req.body.passwordLength))
+  }
+  if (req.body.allChar === 'true'){
+    console.log(generateRandomStringAll(req.body.passwordLength))
+  } else (console.log(generateRandomStringStandard(req.body.passwordLength)))
+
   res.redirect('/passwords')
-})
+});
 
 
 app.listen(PORT, () => {
