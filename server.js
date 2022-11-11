@@ -82,14 +82,15 @@ app.post('/logout', (req, res) => {
 });
 
 app.post('/password/create', (req, res) => {
+  console.log(req.body.websiteName)
+  console.log(req.body.category)
   console.log(req.body.url);
   console.log(req.body.username);
   if (req.body.specialChar === 'true') {
     console.log(generateRandomStringSpecial(req.body.passwordLength))
-  } if (req.body.upperCase === 'true') {
+  } else if (req.body.upperCase === 'true') {
     console.log(generateRandomStringUpper(req.body.passwordLength))
-  }
-  if (req.body.allChar === 'true'){
+  } else if (req.body.allChar === 'true'){
     console.log(generateRandomStringAll(req.body.passwordLength))
   } else (console.log(generateRandomStringStandard(req.body.passwordLength)))
 
