@@ -2,3 +2,4 @@
 
 // select * passwords that equal that organization id
 
+const db = require('../connection');
