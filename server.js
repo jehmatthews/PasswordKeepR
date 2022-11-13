@@ -87,12 +87,12 @@ app.post('/password/create', (req, res) => {
   console.log(req.body.url);
   console.log(req.body.username);
   if (req.body.specialChar === 'true') {
-    console.log(generateRandomStringSpecial(req.body.passwordLength))
+    console.log(generateRandomStringSpecial(req.body.passwordLength));
   } else if (req.body.upperCase === 'true') {
-    console.log(generateRandomStringUpper(req.body.passwordLength))
+    console.log(generateRandomStringUpper(req.body.passwordLength));
   } else if (req.body.allChar === 'true'){
-    console.log(generateRandomStringAll(req.body.passwordLength))
-  } else (console.log(generateRandomStringStandard(req.body.passwordLength)))
+    console.log(generateRandomStringAll(req.body.passwordLength));
+  } else (console.log(generateRandomStringStandard(req.body.passwordLength)));
 
   res.redirect('/passwords')
 });
