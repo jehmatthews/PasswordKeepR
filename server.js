@@ -36,6 +36,7 @@ app.use(express.static('public'));
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
+const apiRoutes = require('./routes/apiRoutes');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -43,59 +44,15 @@ const usersRoutes = require('./routes/users');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+
+const apiRouter = express.Router();
+apiRoutes(apiRouter)
+app.use('/', apiRouter)
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
-app.get('/', (req, res) => {
-  res.redirect('/login');
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-
-app.get('/passwords', (req, res) => {
-  res.render('passwords')
-});
-
-app.get('/passwords/new', (req, res) => {
-  res.render('create-password')
-});
-
-app.post('/passwords', (req, res) => {
-  res.redirect('/passwords')
-});
-
-app.post('/login', (req, res) => {
-  res.redirect('/passwords')
-});
-
-app.post('/passwords/new', (req, res) => {
-  res.redirect('/passwords/new')
-});
-
-app.post('/logout', (req, res) => {
-  res.redirect('/login')
-});
-
-app.post('/password/create', (req, res) => {
-  console.log(req.body.websiteName)
-  console.log(req.body.category)
-  console.log(req.body.url);
-  console.log(req.body.username);
-  if (req.body.specialChar === 'true') {
-    console.log(generateRandomStringSpecial(req.body.passwordLength));
-  } else if (req.body.upperCase === 'true') {
-    console.log(generateRandomStringUpper(req.body.passwordLength));
-  } else if (req.body.allChar === 'true'){
-    console.log(generateRandomStringAll(req.body.passwordLength));
-  } else (console.log(generateRandomStringStandard(req.body.passwordLength)));
-
-  res.redirect('/passwords')
-});
 
 
 app.listen(PORT, () => {
