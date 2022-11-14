@@ -1,4 +1,4 @@
 -- organizations table seeds here (Example)
-INSERT INTO organizations (id, name) VALUES (1, 'LighthouseLabs');
-INSERT INTO organizations (id, name) VALUES (2, 'DarkLabs');
-INSERT INTO organizations (id, name) VALUES (3, 'ExampleLabs');
+INSERT INTO organizations (name) VALUES ('LighthouseLabs');
+INSERT INTO organizations (name) VALUES ('DarkLabs');
+INSERT INTO organizations (name) VALUES ('ExampleLabs');

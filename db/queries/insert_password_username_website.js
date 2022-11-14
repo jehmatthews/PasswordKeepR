@@ -13,4 +13,4 @@ const addNewPassword = function(password) {
   });
 }
 
-// exports.addNewPassword = addNewPassword;
+exports.addNewPassword = addNewPassword;
