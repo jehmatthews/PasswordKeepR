@@ -1,5 +1,7 @@
-const { Router } = require("express");
-
+const generateRandomStringStandard = require('../public/scripts/password-generator-standard');
+const generateRandomStringSpecial = require('../public/scripts/password-generator-special');
+const generateRandomStringUpper = require('../public/scripts/password-generator-upper');
+const generateRandomStringAll = require('../public/scripts/password-generator-all');
 
 module.exports = function(router) {
   router.get('/', (req, res) => {
