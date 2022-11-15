@@ -20,6 +20,10 @@ module.exports = function(router) {
     res.render('create-password')
   });
 
+  router.get('/passwords/edit', (req, res) =>{
+    res.render('edit-password')
+  })
+
   router.post('/passwords', (req, res) => {
     res.redirect('/passwords')
   });
