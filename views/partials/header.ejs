@@ -6,6 +6,8 @@
   crossorigin="anonymous"
 />
 
+<link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 crossorigin="anonymous"></script>
@@ -13,11 +15,12 @@ crossorigin="anonymous"></script>
 <header>
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="/">PasswordKeepR</a>
+    <h5 class="navbar-header" style= "padding-left: 20em;">Logged in as: </h5>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarbutton">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarbutton">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav justify-content-end">
         <li class="nav-item">
           <a href="/passwords" class="nav-link">My Passwords</a>
           <a href="/passwords/new" class="nav-link">Create New Password</a>
