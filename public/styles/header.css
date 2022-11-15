@@ -1,0 +1,22 @@
+h5.navbar-header {
+  display:flex;
+  color: rgb(9, 9, 9);
+  flex-direction:column;
+  justify-content:space-between;
+  align-items: center;
+  padding-top: 6px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.navbar {
+  min-height: 50px;
+  top: 0;
+  width: auto;
+}
+
+button {
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  min-width: 40px;
+}
