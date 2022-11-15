@@ -15,6 +15,7 @@ db.connect();
 
 module.exports = db;
 
+//SIDE NOTE:
 // to connect to database:
 // psql -U labber -d midterm
 // enter password: labber

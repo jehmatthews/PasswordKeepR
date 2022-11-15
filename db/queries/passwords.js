@@ -1,13 +1,11 @@
-// get a password for a specific site
-
 // select * passwords that equal that organization id
 
 const db = require('../connection');
 
-const getPasswordsForOrganization = (password) => {
+const getPasswordsForOrganization = () => {
   return db.query(`SELECT * FROM passwords
-  JOIN organization_id ON organizations(id)
-  WHERE organization.id = $1`, [password])
+  JOIN organizations ON passwords.organization_id = organizations.id
+  WHERE organization_id = 1`)
     .then(data => {
       return data.rows;
     });
@@ -15,11 +13,3 @@ const getPasswordsForOrganization = (password) => {
 
 module.exports = { getPasswordsForOrganization };
 
-//NOTES
-
-// ON LOADING INTO THE USER PAGE:
-// need to select the specific websiteName on for a specific
-// box
-
-// figure out how jquery can connect to a database
-//AJAX CALLS

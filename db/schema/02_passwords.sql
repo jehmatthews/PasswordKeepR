@@ -3,7 +3,7 @@
 DROP TABLE IF EXISTS passwords CASCADE;
 CREATE TABLE passwords (
   id SERIAL PRIMARY KEY NOT NULL,
-  organization_id INTEGER REFERENCES organizations(id),
+  organization_id INTEGER REFERENCES organizations(id) ON DELETE CASCADE,
   websiteName VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   urlName VARCHAR(255) NOT NULL,

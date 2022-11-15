@@ -13,4 +13,4 @@ const addNewPassword = function(password) {
   });
 }
 
-exports.addNewPassword = addNewPassword;
+module.exports = { addNewPassword };
