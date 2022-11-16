@@ -3,11 +3,11 @@
 const db = require('../connection');
 
 const deletePassword = function() {
-  return pool
-  .query(`DELETE * FROM passwords
+  return db.query
+  .query(`DELETE FROM passwords
   WHERE id = $1`, [req.params.id])
   .then(data =>  {
-    console.log(data.rows)
+    return data.rows
   });
 }
 

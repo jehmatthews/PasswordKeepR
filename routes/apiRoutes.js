@@ -1,6 +1,5 @@
-const { template } = require("lodash");
 const GetPasswordFromDatabase = require('../db/queries/getPassword')
-const addPasswordToDatabase = require('../db/queries/insert_password_username_website')
+const deletePassword = require('../db/queries/delete_passwords')
 module.exports = function(router) {
   router.get('/', (req, res) => {
     res.redirect('/login');
@@ -27,6 +26,13 @@ module.exports = function(router) {
       password
     }
     res.render('edit-password', templateVars)
+  })
+
+  router.get('/passwords/:id/delete', (req, res) =>{
+    const { id } = req.params;
+    deletePassword
+    res.redirect('/passwords')
+
   })
 
   router.post('/passwords', (req, res) => {

@@ -25,8 +25,10 @@ const createNewPasswordBox = function (password) {
       </div>
       <div class="button-container">
         <button onclick="copyToClipboard('#${password.password_id}')" class="btn btn-outline-info copy_password">Copy</button>
+        <form method="GET" action="/passwords/${password.password_id}/delete">
         <button class="btn btn-outline-danger delete_password" id="user id"
           type="submit">Delete</button>
+        </form>
           <form method="GET" action="/passwords/${password.password_id}">
         <button class="btn btn-outline-primary edit_password" id="user id" type="submit"
           style="display:block">Edit</button>
