@@ -29,7 +29,7 @@ app.use(express.static('public'));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/widgets-api');
+const newPasswordRoutes = require('./routes/create-new-password');
 const usersRoutes = require('./routes/users');
 const apiRoutes = require('./routes/apiRoutes');
 
@@ -37,7 +37,7 @@ const apiRoutes = require('./routes/apiRoutes');
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
+app.use('/newpassword', newPasswordRoutes);
 app.use('/users', usersRoutes);
 
 const apiRouter = express.Router();

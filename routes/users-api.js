@@ -7,12 +7,12 @@
 
 const express = require('express');
 const router  = express.Router();
-const userQueries = require('../db/queries/users');
+const orgPasswords = require('../db/queries/passwords');
 
-router.get('/', (req, res) => {
-  userQueries.getUsers()
-    .then(users => {
-      res.json({ users });
+router.get('/passwords', (req, res) => {
+  orgPasswords.getPasswordsForOrganization()
+    .then(passwords => {
+      res.json(passwords);
     })
     .catch(err => {
       res
@@ -22,3 +22,5 @@ router.get('/', (req, res) => {
 });
 
 module.exports = router;
+
+
