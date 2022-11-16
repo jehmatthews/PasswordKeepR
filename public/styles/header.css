@@ -2,11 +2,12 @@ h5.navbar-header {
   display:flex;
   color: rgb(9, 9, 9);
   flex-direction:column;
-  justify-content:space-between;
-  align-items: center;
+  font-size: medium;
+  align-items: right;
   padding-top: 12px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: medium;
+  position:absolute;
+  right: 8%;
 }
 
 .navbar {
@@ -26,6 +27,3 @@ button {
   background-image: url("https://www.transparenttextures.com/patterns/noise-lines.png");
 }
 
-.navbar-header p:nth-of-type(2) {
-  flex-grow: 5;
-}
