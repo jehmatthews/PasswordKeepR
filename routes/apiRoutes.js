@@ -1,6 +1,5 @@
-const { template } = require("lodash");
 const GetPasswordFromDatabase = require('../db/queries/getPassword')
-const addPasswordToDatabase = require('../db/queries/insert_password_username_website')
+
 module.exports = function(router) {
   router.get('/', (req, res) => {
     res.redirect('/login');
