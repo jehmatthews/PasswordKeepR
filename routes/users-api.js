@@ -12,7 +12,7 @@ const orgPasswords = require('../db/queries/passwords');
 router.get('/passwords', (req, res) => {
   orgPasswords.getPasswordsForOrganization()
     .then(passwords => {
-      res.json({ passwords });
+      res.json(passwords);
     })
     .catch(err => {
       res

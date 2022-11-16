@@ -7,16 +7,14 @@
 
 const express = require('express');
 const router  = express.Router();
-const db = require('../db/connection');
+// const db = require('../db/connection');
+const addPasswordToDatabase = require('../db/queries/insert_password_username_website')
 
-router.get('/', (req, res) => {
-  const query = `SELECT * FROM widgets`;
-  console.log(query);
-  db.query(query)
-    .then(data => {
-      const widgets = data.rows;
-      res.json({ widgets });
-    })
+router.get('/new', (req, res) => {
+  addPasswordToDatabase.addNewPassword()
+  .then(passwords => {
+    res.json(passwords);
+  })
     .catch(err => {
       res
         .status(500)
