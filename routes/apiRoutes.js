@@ -1,4 +1,5 @@
 const GetPasswordFromDatabase = require('../db/queries/getPassword')
+const deletePassword = require('../db/queries/delete_passwords')
 
 module.exports = function(router) {
   router.get('/', (req, res) => {
@@ -26,6 +27,13 @@ module.exports = function(router) {
       password
     }
     res.render('edit-password', templateVars)
+  })
+
+  router.get('/passwords/:id/delete', (req, res) =>{
+    const { id } = req.params;
+    deletePassword
+    res.redirect('/passwords')
+
   })
 
   router.post('/passwords', (req, res) => {

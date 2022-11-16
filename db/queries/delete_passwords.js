@@ -3,7 +3,8 @@
 const db = require('../connection');
 
 const deletePassword = function() {
-  return db.query(`DELETE FROM passwords
+  return db.query
+  .query(`DELETE FROM passwords
   WHERE id = $1`, [req.params.id])
   .then(data =>  {
     return data.rows
