@@ -1,5 +1,6 @@
 // select * passwords that equal that organization id
 
+const { password } = require('pg/lib/defaults');
 const db = require('../connection');
 
 const getPasswordsForOrganization = () => {
@@ -8,6 +9,7 @@ const getPasswordsForOrganization = () => {
   JOIN organizations ON passwords.organization_id = organizations.id
   WHERE organization_id = 1`)
     .then(data => {
+      // console.log(data.rows[0].password)
       return data.rows;
     });
 };
