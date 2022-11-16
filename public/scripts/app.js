@@ -71,3 +71,24 @@ const renderPasswords = function (passwords) {
   loadPasswords();
 });
 
+const formForCreatingNewPassword = $(".create-container");
+// add an event listener to the form on submit
+formForCreatingNewPassword.submit(function () {
+
+  // serialize the form data to query string
+  const serializedData = $(".create-container").serialize();
+
+  // pass the serialized data to the specific post route
+  // ajax post that sends the form data to the server
+  $.ajax({
+    type: "POST",
+    url: "http://localhost:8080/passwords/create",
+    data: serializedData,
+    success: () => {
+      console.log(data)
+      loadTweets()
+    }
+  });
+});
+
+
