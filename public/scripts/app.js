@@ -9,13 +9,13 @@ const createNewPasswordBox = function (password) {
   <h4>Saved Passwords</h4>
     <div class="passwords-box">
       <div>
-        <h6>${password.websiteName}</h6>
+        <h6>${password.websitename}</h6>
       </div>
       <div>
         <h6>${password.category}</h6>
       </div>
       <div>
-        <h6>${password.urlName}</h6>
+        <h6>${password.urlname}</h6>
       </div>
       <div>
         <h6>${password.username}</h6>
