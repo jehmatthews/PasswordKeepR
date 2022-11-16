@@ -27,8 +27,10 @@ const createNewPasswordBox = function (password) {
         <button onclick="copyToClipboard('#${password.password_id}')" class="btn btn-outline-info copy_password">Copy</button>
         <button class="btn btn-outline-danger delete_password" id="user id"
           type="submit">Delete</button>
+          <form method="GET" action="/passwords/${password.password_id}">
         <button class="btn btn-outline-primary edit_password" id="user id" type="submit"
           style="display:block">Edit</button>
+          </form>
         <script> function copyToClipboard(element) {
           let $temp = $("<input>");
           $("body").append($temp);
