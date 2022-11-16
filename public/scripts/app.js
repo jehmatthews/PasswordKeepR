@@ -6,25 +6,25 @@ $(document).ready(function () {
 // create new password
 const createNewPasswordBox = function (password) {
   const $password = $(`
-  <h4>Saved Passwords</h4>
     <div class="passwords-box">
       <div>
-        <h6>${password.websitename}</h6>
+        <h6>Website name: ${password.websitename}</h6>
       </div>
       <div>
-        <h6>${password.category}</h6>
+        <h6>Category: ${password.category}</h6>
       </div>
       <div>
-        <h6>${password.urlname}</h6>
+        <h6>URL: ${password.urlname}</h6>
       </div>
       <div>
-        <h6>${password.username}</h6>
+        <h6>UserName: ${password.username}</h6>
       </div>
       <div>
-        <h6 id="password">${password.password}</h6>
+        <h6>Password:</h6>
+        <h6 id="${password.password_id}">${password.password}</h6>
       </div>
       <div class="button-container">
-        <button onclick="copyToClipboard('#password')" class="btn btn-outline-info copy_password">Copy</button>
+        <button onclick="copyToClipboard('#${password.password_id}')" class="btn btn-outline-info copy_password">Copy</button>
         <button class="btn btn-outline-danger delete_password" id="user id"
           type="submit">Delete</button>
         <button class="btn btn-outline-primary edit_password" id="user id" type="submit"
