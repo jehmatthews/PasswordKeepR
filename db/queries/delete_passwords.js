@@ -2,16 +2,15 @@
 
 const db = require('../connection');
 
-const deletePassword = function() {
-  return db.query
-  .query(`DELETE FROM passwords
-  WHERE id = $1`, [req.params.id])
+const deletePassword = function(id) {
+  return db.query(`DELETE FROM passwords
+  WHERE id = $1`, [id])
   .then(data =>  {
     return data.rows
   });
 }
 
-module.exports = { deletePassword }
+module.exports = deletePassword
 
 
 // user will click delete button

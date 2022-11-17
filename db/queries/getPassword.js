@@ -1,11 +1,12 @@
 const db = require('../connection');
 
-const getPasswordForEdit = function(){
-  return db.query(`SELECT passwords.password
+const getPasswordForEdit = function(id){
+  return db.query(`SELECT passwords.*
   FROM passwords
   WHERE passwords.id = $1`, [id] )
   .then((results) => {
-    return results.rows
+    console.log('results', results.rows)
+    return results.rows[0]
   })
 };
 

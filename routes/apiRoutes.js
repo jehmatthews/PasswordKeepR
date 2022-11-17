@@ -21,19 +21,20 @@ module.exports = function(router) {
 
   router.get('/passwords/:id', (req, res) =>{
     const { id } = req.params;
-    const password = GetPasswordFromDatabase
-    const templateVars = {
-      id,
-      password
-    }
-    res.render('edit-password', templateVars)
+    const password = GetPasswordFromDatabase.getPasswordForEdit(id)
+    .then((currentPassword) => {
+      const templateVars = {
+        id,
+        password: currentPassword.password
+      }
+      res.render('edit-password', templateVars)
+    })
   })
 
   router.get('/passwords/:id/delete', (req, res) =>{
     const { id } = req.params;
-    deletePassword
+    deletePassword(id)
     res.redirect('/passwords')
-
   })
 
   router.post('/passwords', (req, res) => {
