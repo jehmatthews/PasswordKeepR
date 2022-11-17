@@ -1,13 +1,22 @@
-h5.navbar-header {
+.navbar-header {
   display:flex;
   color: rgb(9, 9, 9);
   flex-direction:column;
   font-size: medium;
   align-items: right;
-  padding-top: 12px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   position:absolute;
   right: 8%;
+  justify-content:flex-end;
+}
+
+.navbar-brand {
+  margin: 15px;
+  font-size:x-large;
+}
+
+.navbar-brand > h6 {
+  margin-left: 0px;
 }
 
 .navbar {
@@ -15,10 +24,15 @@ h5.navbar-header {
   width: auto;
 }
 
-button {
+.nav-link {
+  margin-top: -0.5em;
+  font-size: large;
+}
+
+.navbar-toggler {
   margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   min-width: 40px;
 }
 

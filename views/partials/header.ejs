@@ -14,20 +14,20 @@ crossorigin="anonymous"></script>
 
 <header>
   <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="/">PasswordKeepR</a>
-    <h5 class="navbar-header" style="float: right">Logged in as: demo@lighthouselabs.ca </h5>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarbutton">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="/"><strong>PasswordKeepR</strong><h6>Logged in as: demo@lighthouselabs.ca</h6> </a>
+    <div class="navbar-header"></div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarbutton">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     <div class="collapse navbar-collapse" id="navbarbutton">
-      <ul class="navbar-nav justify-content-end">
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a href="/passwords" class="nav-link">My Passwords</a>
-          <a href="/passwords/new" class="nav-link">Create New Password</a>
+          <a href="/passwords" class="nav-link" style="margin: 0.5em;">My Passwords</a>
+          <a href="/passwords/new" class="nav-link" style="margin: 0.5em;">Create New Password</a>
         </li>
       </ul>
       <form class="logout-button" action="/logout" method="POST">
-        <button class = "btn btn-outline-dark" type="submit">Logout</button>
+        <button class = "btn btn-outline-dark" type="submit" style="margin: 0.5em;">Logout</button>
       </form>
     </div>
   </nav>
