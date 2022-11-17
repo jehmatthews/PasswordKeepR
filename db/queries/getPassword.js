@@ -5,7 +5,6 @@ const getPasswordForEdit = function(id){
   FROM passwords
   WHERE passwords.id = $1`, [id] )
   .then((results) => {
-    console.log('results', results.rows)
     return results.rows[0]
   })
 };

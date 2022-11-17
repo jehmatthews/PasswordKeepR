@@ -1,5 +1,6 @@
 const GetPasswordFromDatabase = require('../db/queries/getPassword')
 const deletePassword = require('../db/queries/delete_passwords')
+const updatePassword = require('../db/queries/update_Password.js')
 
 module.exports = function(router) {
   router.get('/', (req, res) => {
@@ -29,11 +30,23 @@ module.exports = function(router) {
       }
       res.render('edit-password', templateVars)
     })
-  })
+  });
 
   router.get('/passwords/:id/delete', (req, res) =>{
     const { id } = req.params;
     deletePassword(id)
+    res.redirect('/passwords')
+  })
+
+// this is the attempt route for updating password
+  router.post('/passwords/:id', (req, res) =>{
+    console.log('hi')
+    console.log('password:', req.body.newpassword)
+    console.log('id:', id)
+    updatePassword(req.body.newpassword, req.params.id)
+    .then((newpassword) => {
+      console.log(newpassword.rows)
+    })
     res.redirect('/passwords')
   })
 
