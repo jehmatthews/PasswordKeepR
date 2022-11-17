@@ -2,56 +2,9 @@
 $color-default: #f0f8fa;
 $background-default: url("https://www.transparenttextures.com/patterns/subtle-dots.png");
 
-// $header-color-default: #7fe1fa;
-// $header-background-default: url("https://www.transparenttextures.com/patterns/noise-lines.png");
-
 body {
   background-color: $color-default;
   background-image: $backgroun-default;
   margin-bottom: 15px;
 }
 
-// header {
-//   .navbar-header {
-//     display:flex;
-//     color: rgb(9, 9, 9);
-//     flex-direction:column;
-//     font-size: medium;
-//     align-items: right;
-//     font-family: Verdana, Geneva, Tahoma, sans-serif;
-//     position:absolute;
-//     right: 8%;
-//     justify-content:flex-end;
-//   }
-
-//   .navbar-brand {
-//     margin: 15px;
-//     font-size:x-large;
-//   }
-
-//   .navbar-brand > h6 {
-//     margin-left: 0px;
-//   }
-
-//   .navbar {
-//     min-height: 50px;
-//     width: auto;
-//   }
-
-//   .nav-link {
-//     margin-top: -0.5em;
-//     font-size: large;
-//   }
-
-//   .navbar-toggler {
-//     margin-right: 5px;
-//     margin-top: 10px;
-//     margin-bottom: 10px;
-//     min-width: 40px;
-//   }
-
-//   .navbar {
-//     background-color: $header-color-default;
-//     background-image: $header-background-default;
-//   }
-// }
