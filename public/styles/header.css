@@ -41,3 +41,11 @@
   background-image: url("https://www.transparenttextures.com/patterns/noise-lines.png");
 }
 
+.nav-item {
+  margin-left: 5px;
+  border-top: 1px solid black;
+}
+
+.logout-button {
+  margin-left: 6px;
+}
