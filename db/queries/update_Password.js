@@ -4,7 +4,7 @@ const updatePassword = (password, id) => {
   return db.query(`UPDATE passwords SET password = $1 WHERE id = $2`,
   [`${password}`, id])
     .then(data => {
-      return data.rows[0];
+      return data.rows;
     });
 };
 
