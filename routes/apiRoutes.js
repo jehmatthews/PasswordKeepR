@@ -39,13 +39,10 @@ module.exports = function(router) {
   })
 
 // this is the attempt route for updating password
-  router.post('/passwords/:id', (req, res) =>{
-    console.log('hi')
-    console.log('password:', req.body.newpassword)
-    console.log('id:', id)
+  router.post('/password/:id/edit', (req, res) =>{
     updatePassword(req.body.newpassword, req.params.id)
     .then((newpassword) => {
-      console.log(newpassword.rows)
+      return newpassword.rows
     })
     res.redirect('/passwords')
   })
